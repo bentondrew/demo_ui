@@ -16,6 +16,17 @@
       {% endif %}
     {% endwith %}
   </div>
+  <div class="link_header">
+    <div class="link_box">
+      <a href="{{ url_for('index') }}">Home</a>
+    </div>
+    <div class="link_box">
+      <a href="{{ url_for('demo_initialization') }}">Set Up Demo</a>
+    </div>
+    <div class="link_box">
+      <a href="{{ url_for('demo_execution') }}">Run Demo</a>
+    </div>
+  </div>
   <div class="content_container">
     {% block content %}
     {% endblock %}

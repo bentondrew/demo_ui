@@ -3,6 +3,16 @@
   <div class="demo_initialization_content_box">
     <h1 id="demo_initialization_intro">Do Demo Set Up Stuff</h1>
     <button type="button" onclick="test_demo_initialization_function()">Push Me</button>
+    <h2>Random Matrix Generation Service Set Up</h2>
+    <button type="button" onclick="create_random_matrix_generation_database()">Create Database</button>
+    <button type="button" onclick="create_random_matrix_generation_tables()">Create Tables</button>
+    <button type="button" onclick="drop_random_matrix_generation_tables()">Drop Tables</button>
+    <button type="button" onclick="drop_random_matrix_generation_database()">Drop Database</button>
+    <h2>Matrix Multiplication Service Set Up</h2>
+    <button type="button" onclick="create_matrix_multiplication_database()">Create Database</button>
+    <button type="button" onclick="create_matrix_multiplication_tables()">Create Tables</button>
+    <button type="button" onclick="drop_matrix_multiplication_tables()">Drop Tables</button>
+    <button type="button" onclick="drop_matrix_multiplication_database()">Drop Database</button>
   </div>
   <script type="text/javascript" src="{{url_for('static', filename='js/demo_initialization_scripts.js')}}"></script>
 {% endblock %}

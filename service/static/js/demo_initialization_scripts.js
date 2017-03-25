@@ -7,7 +7,7 @@ function simple_ajax_request(method, url) {
   xhr.open(method, url);
   xhr.onload = function() {
     var response = JSON.parse(xhr.responseText);
-    document.getElementById("demo_initialization_intro").innerHTML = "Status code: " + (xhr.status).toString() + ". Response message: " response.status + ".";
+    document.getElementById("demo_initialization_intro").innerHTML = "Status code: " + (xhr.status).toString() + ". Response message: " + response.status + ".";
   };
   xhr.send();
 }

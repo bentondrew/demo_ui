@@ -1,10 +1,10 @@
 # demo_ui
 Web service providing the user interface with the system.
 
-To build the docker image drewantech/demo_ui:0.6.6 via ssh:
+To build the docker image drewantech/demo_ui:0.6.7 via ssh:
 
-docker build -t drewantech/demo_ui:0.6.6 git@github.com:Drewan-Tech/demo_ui.git
+docker build -t drewantech/demo_ui:0.6.7 git@github.com:Drewan-Tech/demo_ui.git
 
-To build the docker image drewantech/demo_ui:0.6.6 via https:
+To build the docker image drewantech/demo_ui:0.6.7 via https:
 
-docker build -t drewantech/demo_ui:0.6.6 https://github.com/Drewan-Tech/demo_ui.git
+docker build -t drewantech/demo_ui:0.6.7 https://github.com/Drewan-Tech/demo_ui.git

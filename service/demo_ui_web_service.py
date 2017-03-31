@@ -35,7 +35,7 @@ def create_random_matrix_generation_database():
     requests_response = requests.put('http://random-matrix-generation'
                                      '/create_matrix_database')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(type(requests_response.json()))}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '

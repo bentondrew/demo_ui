@@ -35,7 +35,7 @@ def create_random_matrix_generation_database():
     requests_response = requests.put('http://random-matrix-generation'
                                      '/create_matrix_database')
     return (jsonify({'status': '{}'
-                    .format(type(requests_response.json()))}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -49,7 +49,7 @@ def create_random_matrix_generation_tables():
     requests_response = requests.put('http://random-matrix-generation'
                                      '/create_matrix_tables')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -64,7 +64,7 @@ def drop_random_matrix_generation_database():
     requests_response = requests.delete('http://random-matrix-generation'
                                         '/drop_matrix_database')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -78,7 +78,7 @@ def drop_random_matrix_generation_tables():
     requests_response = requests.delete('http://random-matrix-generation'
                                         '/drop_matrix_tables')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -92,7 +92,7 @@ def create_matrix_multiplication_database():
     requests_response = requests.put('http://matrix-multiplication'
                                      '/create_matrix_database')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -106,7 +106,7 @@ def create_matrix_multiplication_tables():
     requests_response = requests.put('http://matrix-multiplication'
                                      '/create_matrix_tables')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -120,7 +120,7 @@ def drop_matrix_multiplication_database():
     requests_response = requests.delete('http://matrix-multiplication'
                                         '/drop_matrix_database')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '
@@ -134,7 +134,7 @@ def drop_matrix_multiplication_tables():
     requests_response = requests.delete('http://matrix-multiplication'
                                         '/drop_matrix_tables')
     return (jsonify({'status': '{}'
-                    .format(requests_response.json())}),
+                    .format(requests_response.json()['status'])}),
             requests_response.status_code)
   except Exception as e:
     return jsonify({'status': 'Error communicating with '

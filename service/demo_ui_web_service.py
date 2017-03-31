@@ -8,6 +8,7 @@ from flask import (Flask,
                    url_for,
                    jsonify)
 from os import urandom
+import requests
 
 app = Flask(__name__)
 app.secret_key = urandom(32)
@@ -31,20 +32,28 @@ def demo_execution():
 @app.route('/random_matrix_generation/create_matrix_database', methods=['PUT'])
 def create_random_matrix_generation_database():
   try:
-    #  TODO: Send request to random-matrix-generation service
-    return jsonify({'status': 'Successfully created matrix database.'}), 201
+    requests_response = requests.put('random-matrix-generation'
+                                     '/create_matrix_database')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in creating matrix database: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'random-matrix-generation service: {}'
                    .format(e)}), 500
 
 
 @app.route('/random_matrix_generation/create_matrix_tables', methods=['PUT'])
 def create_random_matrix_generation_tables():
   try:
-    #  TODO: Send request to random-matrix-generation service
-    return jsonify({'status': 'Successfully created matrix tables.'}), 201
+    requests_response = requests.put('random-matrix-generation'
+                                     '/create_matrix_tables')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in creating matrix tables: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'random-matrix-generation service: {}'
                    .format(e)}), 500
 
 
@@ -52,58 +61,82 @@ def create_random_matrix_generation_tables():
            methods=['DELETE'])
 def drop_random_matrix_generation_database():
   try:
-    #  TODO: Send request to random-matrix-generation service
-    return jsonify({'status': 'Successfully dropped matrix database.'}), 201
+    requests_response = requests.delete('random-matrix-generation'
+                                        '/drop_matrix_database')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in dropping matrix database: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'random-matrix-generation service: {}'
                    .format(e)}), 500
 
 
 @app.route('/random_matrix_generation/drop_matrix_tables', methods=['DELETE'])
 def drop_random_matrix_generation_tables():
   try:
-    #  TODO: Send request to random-matrix-generation service
-    return jsonify({'status': 'Successfully dropped matrix tables.'}), 201
+    requests_response = requests.delete('random-matrix-generation'
+                                        '/drop_matrix_tables')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in dropping matrix tables: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'random-matrix-generation service: {}'
                    .format(e)}), 500
 
 
 @app.route('/matrix_multiplication/create_matrix_database', methods=['PUT'])
 def create_matrix_multiplication_database():
   try:
-    #  TODO: Send request to matrix-multiplication service
-    return jsonify({'status': 'Successfully created matrix database.'}), 201
+    requests_response = requests.put('matrix-multiplication'
+                                     '/create_matrix_database')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in creating matrix database: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'matrix-multiplication service: {}'
                    .format(e)}), 500
 
 
 @app.route('/matrix_multiplication/create_matrix_tables', methods=['PUT'])
 def create_matrix_multiplication_tables():
   try:
-    #  TODO: Send request to matrix-multiplication service
-    return jsonify({'status': 'Successfully created matrix tables.'}), 201
+    requests_response = requests.put('matrix-multiplication'
+                                     '/create_matrix_tables')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in creating matrix tables: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'matrix-multiplication service: {}'
                    .format(e)}), 500
 
 
 @app.route('/matrix_multiplication/drop_matrix_database', methods=['DELETE'])
 def drop_matrix_multiplication_database():
   try:
-    #  TODO: Send request to matrix-multiplication service
-    return jsonify({'status': 'Successfully dropped matrix database.'}), 201
+    requests_response = requests.delete('matrix-multiplication'
+                                        '/drop_matrix_database')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in dropping matrix database: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'matrix-multiplication service: {}'
                    .format(e)}), 500
 
 
 @app.route('/matrix_multiplication/drop_matrix_tables', methods=['DELETE'])
 def drop_matrix_multiplication_tables():
   try:
-    #  TODO: Send request to matrix-multiplication service
-    return jsonify({'status': 'Successfully dropped matrix tables.'}), 201
+    requests_response = requests.delete('matrix-multiplication'
+                                        '/drop_matrix_tables')
+    return (jsonify({'status': '{}'
+                    .format(requests_response.json())}),
+            requests_response.status_code)
   except Exception as e:
-    return jsonify({'status': 'Error in dropping matrix tables: {}'
+    return jsonify({'status': 'Error communicating with '
+                    'matrix-multiplication service: {}'
                    .format(e)}), 500

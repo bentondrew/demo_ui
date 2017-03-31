@@ -32,7 +32,7 @@ def demo_execution():
 @app.route('/random_matrix_generation/create_matrix_database', methods=['PUT'])
 def create_random_matrix_generation_database():
   try:
-    requests_response = requests.put('random-matrix-generation'
+    requests_response = requests.put('http://random-matrix-generation'
                                      '/create_matrix_database')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -46,7 +46,7 @@ def create_random_matrix_generation_database():
 @app.route('/random_matrix_generation/create_matrix_tables', methods=['PUT'])
 def create_random_matrix_generation_tables():
   try:
-    requests_response = requests.put('random-matrix-generation'
+    requests_response = requests.put('http://random-matrix-generation'
                                      '/create_matrix_tables')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -61,7 +61,7 @@ def create_random_matrix_generation_tables():
            methods=['DELETE'])
 def drop_random_matrix_generation_database():
   try:
-    requests_response = requests.delete('random-matrix-generation'
+    requests_response = requests.delete('http://random-matrix-generation'
                                         '/drop_matrix_database')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -75,7 +75,7 @@ def drop_random_matrix_generation_database():
 @app.route('/random_matrix_generation/drop_matrix_tables', methods=['DELETE'])
 def drop_random_matrix_generation_tables():
   try:
-    requests_response = requests.delete('random-matrix-generation'
+    requests_response = requests.delete('http://random-matrix-generation'
                                         '/drop_matrix_tables')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -89,7 +89,7 @@ def drop_random_matrix_generation_tables():
 @app.route('/matrix_multiplication/create_matrix_database', methods=['PUT'])
 def create_matrix_multiplication_database():
   try:
-    requests_response = requests.put('matrix-multiplication'
+    requests_response = requests.put('http://matrix-multiplication'
                                      '/create_matrix_database')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -103,7 +103,7 @@ def create_matrix_multiplication_database():
 @app.route('/matrix_multiplication/create_matrix_tables', methods=['PUT'])
 def create_matrix_multiplication_tables():
   try:
-    requests_response = requests.put('matrix-multiplication'
+    requests_response = requests.put('http://matrix-multiplication'
                                      '/create_matrix_tables')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -117,7 +117,7 @@ def create_matrix_multiplication_tables():
 @app.route('/matrix_multiplication/drop_matrix_database', methods=['DELETE'])
 def drop_matrix_multiplication_database():
   try:
-    requests_response = requests.delete('matrix-multiplication'
+    requests_response = requests.delete('http://matrix-multiplication'
                                         '/drop_matrix_database')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
@@ -131,7 +131,7 @@ def drop_matrix_multiplication_database():
 @app.route('/matrix_multiplication/drop_matrix_tables', methods=['DELETE'])
 def drop_matrix_multiplication_tables():
   try:
-    requests_response = requests.delete('matrix-multiplication'
+    requests_response = requests.delete('http://matrix-multiplication'
                                         '/drop_matrix_tables')
     return (jsonify({'status': '{}'
                     .format(requests_response.json())}),
